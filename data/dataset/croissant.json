@@ -1,0 +1,66 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "ClashEval",
+  "description": "ClashEval is a framework for understanding the tradeoffs that LLMs make when deciding between their prior responses and the contextual information provided.",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "citeAs": "@article{wu2024chasheval,\n          title={ClashEval: Quantifying the tug-of-war between an LLM\u2019s internal prior and external evidence},\n          author={Wu, Kevin and Wu, Eric and Zou, James},\n          journal={arXiv preprint arXiv:2404.10198},\n          year={2024}}",
+  "license": "CC BY 4.0",
+  "url": "https://github.com/kevinwu23/StanfordClashEval",
+  "version": "1.0.0",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "github-repository",
+      "name": "github-repository",
+      "description": "ClashEval repository on GitHub.",
+      "contentUrl": "https://github.com/kevinwu/StanfordClashEval",
+      "encodingFormat": "git+https",
+      "sha256": "main"
+    }
+  ]
+}
