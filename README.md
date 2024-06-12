@@ -6,6 +6,18 @@ This repository contains the dataset and model responses accompanying the paper 
 
 ClashEval is a dataset and benchmark designed to study how large language models (LLMs) arbitrate between their internal knowledge and external evidence when the two sources conflict. Our findings highlight the models’ tendencies to sometimes prefer incorrect external content over their correct prior knowledge and vice versa.
 
+## Accessing the Dataset
+
+The ClashEval dataset is also accessible on Hugging Face at the following URL: [https://huggingface.co/datasets/kewu93/ClashEval](https://huggingface.co/datasets/kewu93/ClashEval).
+
+You can load the dataset using the Hugging Face `datasets` library with the following code:
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset('kewu93/ClashEval', trust_remote_code=True)
+```
+
 ## Dataset
 
 The ClashEval dataset contains over 1200 questions across six domains:
@@ -50,7 +62,7 @@ This directory contains the primary datasets and model responses used in the Cla
 
 #### model_responses
 
-This subdirectory contains the responses from various models benchmarked in the study.
+This directory contains the responses from various models benchmarked in the study.
 
 - `claudeopus.pqt`: Responses from the Claude Opus model in Parquet format.
 - `claudesonnet.pqt`: Responses from the Claude Sonnet model in Parquet format.
@@ -59,7 +71,7 @@ This subdirectory contains the responses from various models benchmarked in the 
 - `gpt4.pqt`: Responses from the GPT-4o model in Parquet format.
 - `llama3.pqt`: Responses from the Llama-3-8b model in Parquet format.
 
-  Each Parquet file in the `model_responses` subdirectory contains the following columns:
+Each Parquet file in the `model_responses` directory contains the following columns:
 
 - **question**: The question posed to the LLM.
 - **context_original**: The original context provided to the model.
@@ -77,9 +89,16 @@ This subdirectory contains the responses from various models benchmarked in the 
 - **context_correct**: Indicates whether the context was correct (1 for correct, 0 for incorrect).
 - **neither_correct**: Indicates whether neither the prior nor the context was correct (1 for neither correct, 0 otherwise).
 
-
 ### prompts
 
 This directory contains the prompt templates used for querying the LLMs.
 
 - `prompts.py`: A Python script containing the prompts used for question generation and model responses.
+
+## Usage
+
+To use the ClashEval dataset and benchmark:
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/kevinwu23/StanfordClashEval.git
+   cd StanfordClashEval
