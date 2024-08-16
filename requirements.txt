@@ -1,0 +1,11 @@
+pandas
+re
+numpy
+ast
+seaborn
+matplotlib
+IPython
+warnings
+requests
+json
+collections
