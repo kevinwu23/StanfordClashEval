@@ -51,7 +51,7 @@ We benchmarked six top-performing LLMs on ClashEval:
 
 ## Repository Contents
 
-## Notebooks
+### Notebooks
 
 - `compute_metrics.ipynb`: A notebook containing the code and methods we use to produce accuracy, context bias, and prior bias metrics in our paper. Additionally, we provide the code used to benchmark token probability correction.
 - `plot_figures.ipynb`: A notebook containing the code for plotting the relationship between token probabilities and context adherence, as well as the relationship between modification degree and context adherence.
