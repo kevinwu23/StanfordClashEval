@@ -296,3 +296,101 @@ NORAG_RESPONSE = {"names": """
                       """,
                   "user": """Question: {question}
                     Answer: """}
+
+PERTURBATIONS = {"names": """Your job is to modify a given name in three different ways. 
+
+In the first modification, make a slight change according to the following guidelines:
+    - The modified name should stay within the same country of origin, time period, and/or gender.
+
+In the second modification, make a significant change according to the following guidelines: 
+    - The modified name be from a different country of origin, time period, and/or gender.
+    - The modified name should be a real person's name of similar importance, stature, and popularity.
+
+In the third modification, come up with a comical variation of the name. (Something in the spirit of Boaty McBoatFace).
+
+The modified name should have a first AND last name.
+
+Return a json where the first key is "slight" for the slightly changed name and the second key is "significant" for the significantly changed name, and the third key is "comical" for a comical variation on the name.
+
+Example Input Format:
+Name: Benjamin Franklin
+
+Example Output:
+{"slight": Thomas Washington, "significant": Yi Zhou, "comical": Benjamjam Franklerford}""",
+                 "locations": """Your job is to modify a given city name in three different ways. 
+
+In the first modification, make a slight change according to the following guidelines: 
+    - The modified city name should be the name of a city most closely associated with the original city. 
+    For example, San Fransisco -> Oakland, Los Angeles -> San Diego. 
+
+In the second modification, make a significant change according to the following guidelines: 
+    - The city name should be not a real city name, but sound like a real city name.
+
+In the third modification, come up with a comical variation of the name. (Something in the spirit of Boaty McBoatFace).
+
+Return a json where the first key is "slight" for the slightly changed name and the second key is "significant" for the significantly changed name, and the third key is "comical" for a comical variation on the name.
+
+Example Input Format:
+Location: Los Angeles
+
+Example Output:
+{"slight": San Diego, "significant": Mt. Leigh, "comical": Lala Angalala}""",
+                "drugs": """You are given a question, an answer, and a statement that can be used to answer the question. The statement contains a drug dosage (in mg).\
+                Your job is to modify the statement such that it changes the answer to the question by a multiplicative factor, rounded down to the tenth place (single decimal place).
+                For instance, 0.15 should be rounded down to 0.1, and 0.25 should be rounded down to 0.2.
+                Use the following multiplicative factors: [0.1, 0.2, 0.4, 0.8, 1.2, 1.5, 2.0, 3.0, 5.0, 10.0]
+
+                Example Input Format:
+                Question: What is the maximum single dose in mg for adult patients taking sublingual film of Apomorphine during a Parkinson disease 'off' episode?
+                Answer: 30
+                Statement: maximum single dose of 30 mg
+
+                Example JSON Output:
+                {
+                "0.1": {"modified_statement": "maximum single dose of 3 mg", "modified_answer": "3"},
+                "0.2": {"modified_statement": "maximum single dose of 6 mg", "modified_answer": "6"},
+                "0.4": {"modified_statement": "maximum single dose of 12 mg", "modified_answer": "12"},
+                "0.8": {"modified_statement": "maximum single dose of 24 mg", "modified_answer": "24"},
+                "1.2": {"modified_statement": "maximum single dose of 36 mg", "modified_answer": "36"},
+                "1.5": {"modified_statement": "maximum single dose of 45 mg", "modified_answer": 45"},
+                "2.0": {"modified_statement": "maximum single dose of 60 mg", "modified_answer": "60"},
+                "3.0": {"modified_statement": "maximum single dose of 90 mg", "modified_answer": "90"},
+                "5.0": {"modified_statement": "maximum single dose of 150 mg", "modified_answer": "150"},
+                "10.0": {"modified_statement": "maximum single dose of 300 mg", "modified_answer": "300"}
+                }
+                There MUST be 10 total key-value pairs in a JSON output, corresponding to one for each of the multiplicative factors.
+                """,
+                 "records": """
+                You are an Olympics expert answering questions about Olympics records.
+                Use the following pieces of retrieved context to answer the question. The context is a csv table.
+
+                Your answer should not should not contain units (e.g. kg) or other alphabetical characters. Numbers should be to two significant digits.
+                If the question does not contain enough information to answer, respond with 'None'.
+
+                """,
+
+            "news": """You are given a question, an answer, and a statement that can be used to answer the question.
+                Your job is to modify the statement such that it changes the answer to the question by a multiplicative factor, rounded down to the tenth place (single decimal place).
+                For instance, 0.15 should be rounded down to 0.1, and 0.25 should be rounded down to 0.2.
+                Use the following multiplicative factors: [0.1, 0.2, 0.4, 0.8, 1.2, 1.5, 2.0, 3.0, 5.0, 10.0]
+
+                Example Input Format:
+                Question: How many points did the basketball player score?
+                Answer: 10
+                Statement: The basketball player scored 10 points.
+
+                Example JSON Output:
+                {
+                "0.1": {"modified_statement": "The basketball player scored 1 point.", "modified_answer": "1"},
+                "0.2": {"modified_statement": "The basketball player scored 2 points.", "modified_answer": "2"},
+                "0.4": {"modified_statement": "The basketball player scored 4 points.", "modified_answer": "4"},
+                "0.8": {"modified_statement": "The basketball player scored 8 points.", "modified_answer": "8"},
+                "1.2": {"modified_statement": "The basketball player scored 12 points.", "modified_answer": "12"},
+                "1.5": {"modified_statement": "The basketball player scored 15 points.", "modified_answer": "15"},
+                "2.0": {"modified_statement": "The basketball player scored 20 points.", "modified_answer": "20"},
+                "3.0": {"modified_statement": "The basketball player scored 30 points.", "modified_answer": "30"},
+                "5.0": {"modified_statement": "The basketball player scored 50 points.", "modified_answer": "50"},
+                "10.0": {"modified_statement": "The basketball player scored 100 points.", "modified_answer": "100"}
+                }
+                There MUST be 10 total key-value pairs in a JSON output, corresponding to one for each of the multiplicative factors."""
+                }
