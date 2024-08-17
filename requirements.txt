@@ -10,4 +10,5 @@ requests
 json
 collections
 openai
+Wikipedia-API
 
